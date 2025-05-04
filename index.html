@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Sustainable City Map</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    body, html { height: 100%; margin: 0; }
+    #map { height: 100%; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Create the map
+    var map = L.map('map').setView([25.2854, 51.5310], 13); // Centered arbitrarily
+
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Example markers
+    L.marker([25.2854, 51.5310]).addTo(map).bindPopup("Green Roof Building: Reduces heat and absorbs rain.");
+    L.marker([25.2900, 51.5280]).addTo(map).bindPopup("Solar Panel Array: Generates clean renewable energy.");
+    L.marker([25.2820, 51.5340]).addTo(map).bindPopup("Sponge Park: Soaks rainwater and cools the environment.");
+    L.marker([25.2875, 51.5330]).addTo(map).bindPopup("Electric Bus Station: Sustainable public transport.");
+    L.marker([25.2845, 51.5265]).addTo(map).bindPopup("Cooling Center: Provides safe space during heatwaves.");
+    L.marker([25.2860, 51.5295]).addTo(map).bindPopup("Rainwater Harvest Tank: Supplies water in dry periods.");
+    L.marker([25.2890, 51.5315]).addTo(map).bindPopup("Community Garden: Local food production and recreation.");
+  </script>
+</body>
+</html>
